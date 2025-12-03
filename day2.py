@@ -36,7 +36,7 @@ def solve(input_file):
                     total += i
         return total
         
-    print('day ')
+    print('day 2')
     print('part 1:', part1())
     print('part 2:', part2())
 
