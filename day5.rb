@@ -38,14 +38,11 @@ def part1()
 end
 
 def part2()
-    ranges = $lines.select{ |line| line.include? "-" }.map{ |range|
-        range.split("-").map(&:to_i)
-    }
+    ranges = $lines
+        .select { |line| line.include? "-" }
+        .map { |range| range.split("-").map(&:to_i) }
     ranges = merge_ranges ranges
-    ranges.reduce(0) { |total, range|
-        difference = (range[1] - range[0] + 1)
-        total + difference
-    }
+    ranges.reduce(0) { |total, range| total + (range[1] - range[0] + 1) }
 end
 
 puts "part 1: #{part1}"
